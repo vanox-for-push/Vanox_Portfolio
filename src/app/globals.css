@@ -435,12 +435,18 @@ footer > p {
   margin-bottom: 16px;
 }
 
-.product-hero h1 {
+.product-hero h1,
+.product-hero .desktop-h1 {
+  display: block;
   font-size: 52px;
   line-height: 1.15;
   font-weight: 800;
   color: var(--text-heading);
   margin-bottom: 24px;
+}
+
+.product-hero .mobile-h2 {
+  display: none;
 }
 
 .hero-description {
@@ -496,6 +502,21 @@ footer > p {
     order: 3;
     font-size: 32px;
     line-height: 1.25;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+  
+  .product-hero .desktop-h1 {
+    display: none;
+  }
+  
+  .product-hero .mobile-h2 {
+    display: block;
+    order: 3;
+    font-size: 32px;
+    line-height: 1.25;
+    font-weight: 800;
+    color: var(--text-heading);
     margin-bottom: 12px;
     letter-spacing: -0.5px;
   }

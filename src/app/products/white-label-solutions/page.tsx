@@ -109,14 +109,25 @@ export default function WhiteLabelSolutionsPage() {
       <section className={styles.heroSection}>
         <div className="container">
           <div className={styles.heroContainer}>
+            <motion.span 
+              className={`${styles.badge} ${styles.mobileBadge}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              White Label FinTech
+            </motion.span>
+
             <motion.div 
+              className={styles.textWrapper}
               initial="hidden"
               animate="visible"
               variants={fadeUp}
             >
-              <span className={styles.badge}>White Label FinTech</span>
+              <span className={`${styles.badge} ${styles.desktopBadge}`}>White Label FinTech</span>
               
-              <h1 className={styles.heroTitle}>Launch Your Own Branded FinTech Platform with Confidence</h1>
+              <h1 className={`${styles.heroTitle} ${styles.desktopTitle}`}>Launch Your Own Branded FinTech Platform with Confidence</h1>
+              <h3 className={`${styles.heroTitle} ${styles.mobileTitle}`}>Launch Your Own Branded FinTech Platform with Confidence</h3>
               
               <p className={styles.heroDesc}>
                 Build your own digital payment ecosystem under your brand with Vanox Dynamics. Our White Label Solutions enable businesses to offer secure payment services, manage merchants, and scale operations without building the technology from scratch.
@@ -154,14 +165,24 @@ export default function WhiteLabelSolutionsPage() {
       {/* 2. Overview */}
       <section className={styles.sectionGray}>
         <div className="container">
-          <div className={styles.heroContainer}>
+          <div className={`${styles.heroContainer} ${styles.overviewContainer}`}>
+            <motion.span 
+              className={`${styles.sectionLabel} ${styles.mobileBadge}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              style={{ marginBottom: '24px' }}
+            >
+              Platform Overview
+            </motion.span>
             <motion.div 
+              className={styles.textWrapper}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "0px" }}
               variants={fadeUp}
             >
-              <span className={styles.sectionLabel}>Platform Overview</span>
+              <span className={`${styles.sectionLabel} ${styles.desktopBadge}`}>Platform Overview</span>
               <h2 className={styles.sectionTitle}>Everything You Need to Build Your FinTech Brand</h2>
               <p className={styles.sectionDesc}>
                 Vanox White Label Solutions provide a ready-to-launch platform that can be customized with your branding, business workflows, and operational requirements. From payment acceptance to merchant management and reporting, we provide the technology while you focus on growing your business.

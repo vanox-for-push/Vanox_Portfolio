@@ -23,7 +23,7 @@
   align-items: center;
   gap: 8px;
   padding: 6px 16px;
-  background-color: rgba(22, 163, 74, 0.1);
+  /* background-color: rgba(22, 163, 74, 0.1); */
   color: #16A34A;
   border-radius: 100px;
   font-size: 13px;
@@ -31,7 +31,7 @@
   text-transform: uppercase;
   letter-spacing: 1.2px;
   margin-bottom: 20px;
-  border: 1px solid rgba(22, 163, 74, 0.2);
+  /* border: 1px solid rgba(22, 163, 74, 0.2); */
 }
 
 .badgeIcon {
@@ -64,14 +64,14 @@
 .solutionsList {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 80px;
   position: relative;
   padding-bottom: 30px;
 }
 
 .cardStickyContainer {
-  position: relative;
-  top: auto;
+  position: sticky;
+  top: var(--sticky-top, 120px);
   width: 100%;
 }
 
@@ -79,11 +79,6 @@
   .solutionsList {
     gap: 140px;
     padding-bottom: 40px;
-  }
-
-  .cardStickyContainer {
-    position: sticky;
-    top: var(--sticky-top, 120px);
   }
 }
 
@@ -133,9 +128,7 @@
     order: 1;
   }
 
-  .solutionImage {
-    max-height: 380px;
-  }
+
 
   .cardBadge {
     margin-bottom: 8px;
@@ -185,10 +178,14 @@
 .solutionImage {
   width: 100%;
   height: auto;
-  max-height: 480px;
   display: block;
   object-fit: contain;
   border-radius: 20px;
+  transition: transform 0.4s ease;
+}
+
+.solutionCard:hover .solutionImage {
+  transform: scale(1.03);
 }
 
 /* Content Styling */
@@ -328,18 +325,11 @@
   .section {
     padding: 60px 0 45px 0;
   }
-  .cardStickyContainer {
-    position: relative;
-    top: auto !important;
-  }
   .solutionCard {
     padding: 32px;
     gap: 28px;
   }
-  .solutionImage {
-    min-height: 220px;
-    max-height: 320px;
-  }
+
   .cardTitle {
     font-size: 23px;
   }
@@ -378,13 +368,8 @@
   }
 
   .solutionsList {
-    gap: 24px;
+    gap: 60px;
     padding-bottom: 20px;
-  }
-
-  .cardStickyContainer {
-    position: relative;
-    top: auto !important;
   }
 
   .solutionCard {
@@ -405,7 +390,6 @@
   .imageCard {
     border-radius: 18px;
     height: auto;
-    max-height: 360px;
     width: 100%;
     background: transparent;
     border: none;
@@ -415,7 +399,6 @@
   .solutionImage {
     width: 100%;
     height: auto;
-    max-height: 320px;
     object-fit: contain;
     border-radius: 18px;
   }
@@ -499,17 +482,15 @@
 
 @media (max-width: 480px) {
   .solutionsList {
-    gap: 20px;
+    gap: 50px;
   }
 
   .imageCard {
     height: auto;
-    max-height: 280px;
   }
 
   .solutionImage {
     height: auto;
-    max-height: 280px;
   }
 
   .highlightsGrid {

@@ -21,6 +21,51 @@ import {
 import styles from "./SolutionsSection.module.css";
 
 const solutions = [
+    {
+    id: "b2b-b2c-saas",
+    tag: "SaaS & Enterprise Solutions",
+    tagIcon: Building2,
+    title: "Customizable B2B & B2C Enterprise SaaS Platform",
+    description:
+      "Launch turn-key fintech software, UPI portals, AEPS & BBPS management, KYC verification APIs, and e-commerce marketplaces with complete licensing and operational support.",
+    image: "/images/about/b2b-b2c.jpeg",
+    alt: "Vanox Dynamics B2B & B2C Business SaaS Platform",
+    highlights: [
+      {
+        title: "Credit Card & Rent",
+        desc: "Instant processing for B2B vendor payouts & rent.",
+        icon: CreditCard,
+      },
+      {
+        title: "Banking APIs & AEPS",
+        desc: "Plug-and-play APIs for BBPS utility bills, AEPS cash, and DMT payouts.",
+        icon: Layers,
+      },
+      {
+        title: "AI & KYC Verification",
+        desc: "Automated document verification, OCR parsing, and identity checks.",
+        icon: ShieldCheck,
+      },
+      {
+        title: "White-Label SaaS",
+        desc: "Custom branding, multi-tenant portals, and admin control panels.",
+        icon: Building2,
+      },
+      {
+        title: "License & Compliance",
+        desc: "Full assistance with regulatory compliance and legal registration.",
+        icon: FileCheck2,
+      },
+      {
+        title: "Automated GST Invoices",
+        desc: "Automated GST invoicing, recurring billing, and payout reconciliation.",
+        icon: CheckCircle2,
+      },
+    ],
+    link: "/products/b2b-white-label-solutions",
+    linkText: "Explore SaaS Platform",
+    imagePosition: "left" as const,
+  },
   {
     id: "payment-infrastructure",
     tag: "FinTech & Payments",
@@ -64,51 +109,6 @@ const solutions = [
     ],
     link: "/products/payment-solutions",
     linkText: "Explore Payment Solutions",
-    imagePosition: "left" as const,
-  },
-  {
-    id: "b2b-b2c-saas",
-    tag: "SaaS & Enterprise Solutions",
-    tagIcon: Building2,
-    title: "Customizable B2B & B2C Enterprise SaaS Platform",
-    description:
-      "Launch turn-key fintech software, UPI portals, AEPS & BBPS management, KYC verification APIs, and e-commerce marketplaces with complete licensing and operational support.",
-    image: "/images/about/b2b-b2c.jpeg",
-    alt: "Vanox Dynamics B2B & B2C Business SaaS Platform",
-    highlights: [
-      {
-        title: "Credit Card & Rent",
-        desc: "Instant processing for B2B vendor payouts & rent.",
-        icon: CreditCard,
-      },
-      {
-        title: "Banking APIs & AEPS",
-        desc: "Plug-and-play APIs for BBPS utility bills, AEPS cash, and DMT payouts.",
-        icon: Layers,
-      },
-      {
-        title: "AI & KYC Verification",
-        desc: "Automated document verification, OCR parsing, and identity checks.",
-        icon: ShieldCheck,
-      },
-      {
-        title: "White-Label SaaS",
-        desc: "Custom branding, multi-tenant portals, and admin control panels.",
-        icon: Building2,
-      },
-      {
-        title: "License & Compliance",
-        desc: "Full assistance with regulatory compliance and legal registration.",
-        icon: FileCheck2,
-      },
-      {
-        title: "Automated GST Invoices",
-        desc: "Automated GST invoicing, recurring billing, and payout reconciliation.",
-        icon: CheckCircle2,
-      },
-    ],
-    link: "/products/b2b-white-label-solutions",
-    linkText: "Explore SaaS Platform",
     imagePosition: "left" as const,
   },
   {
@@ -195,7 +195,7 @@ function StackedCard({ item, index, total }: StackedCardProps) {
   const TagIcon = item.tagIcon;
 
   // Staggered top offsets for stacked visual depth
-  const stickyTop = 120 + index * 26;
+  const stickyTop = mounted && !isDesktop ? 80 + index * 16 : 120 + index * 26;
 
   return (
     <div
@@ -213,11 +213,11 @@ function StackedCard({ item, index, total }: StackedCardProps) {
         className={`${styles.solutionCard} ${
           isImageLeft ? styles.imageLeft : styles.imageRight
         }`}
-        style={{ scale: mounted && isDesktop ? scale : 1 }}
+        style={{ scale: mounted ? scale : 1 }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.5, delay: mounted && isDesktop ? index * 0.1 : 0 }}
+        transition={{ duration: 0.5, delay: mounted ? index * 0.1 : 0 }}
       >
         {/* Image Wrapper */}
         <div className={styles.imageWrapper}>

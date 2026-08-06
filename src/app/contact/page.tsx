@@ -197,11 +197,35 @@ ${formState.message}`;
               <div className="contact-form-row">
                 <div className="contact-form-group">
                   <label htmlFor="email" className="contact-label">Email Address</label>
-                  <input type="email" id="email" className="contact-input" value={formState.email} onChange={handleInputChange} placeholder="john@example.com" required />
+                  <input 
+                    type="email" 
+                    id="email" 
+                    className="contact-input" 
+                    value={formState.email} 
+                    onChange={handleInputChange} 
+                    placeholder="you@company.com" 
+                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                    title="Please enter a valid email address (e.g. you@company.com)"
+                    required 
+                  />
                 </div>
                 <div className="contact-form-group">
                   <label htmlFor="phone" className="contact-label">Phone Number</label>
-                  <input type="tel" id="phone" className="contact-input" value={formState.phone} onChange={handleInputChange} placeholder="+1 234 567 890" required />
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    className="contact-input" 
+                    value={formState.phone} 
+                    onChange={(e) => {
+                      const numericValue = e.target.value.replace(/[^0-9]/g, '');
+                      setFormState({ ...formState, phone: numericValue });
+                    }} 
+                    placeholder="1234567890" 
+                    pattern="[0-9]{7,15}"
+                    maxLength={15}
+                    title="Please enter a valid phone number (7-15 digits only)"
+                    required 
+                  />
                 </div>
               </div>
 

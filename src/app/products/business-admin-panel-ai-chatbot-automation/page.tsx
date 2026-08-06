@@ -143,7 +143,7 @@ export default function BusinessAdminPanelPage() {
               Next-Gen AI Automation
             </span>
             
-            <h1>Intelligent Chatbot Admin Platform</h1>
+            <h1 className="desktop-h1">Intelligent Chatbot Admin Platform</h1>
             
             <p className="chatbot-hero-description">
               Empower your enterprise with an AI-driven admin dashboard. Visually build, monitor, and scale automated chatbot workflows across every customer channel in real-time.

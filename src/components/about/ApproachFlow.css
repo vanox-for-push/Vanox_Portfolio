@@ -185,7 +185,7 @@
   .mobile-line {
     display: block;
     top: 0;
-    left: 32px;
+    left: 24px;
     width: 4px;
     height: 100%;
   }
@@ -206,21 +206,40 @@
   }
   
   .approach-dot-wrapper {
-    top: 40px; /* aligned with top of the card usually, but center of 64px dot is 32px */
-    left: 32px;
+    top: 32px; 
+    left: 24px;
     transform: translate(-50%, -50%);
+  }
+  
+  .approach-dot {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .approach-dot-inner {
+    font-size: 14px;
   }
   
   .approach-content {
     position: relative;
-    width: calc(100% - 80px);
-    max-width: 400px;
-    margin-left: 80px;
-    left: 0;
+    width: calc(100% - 52px) !important;
+    max-width: none !important;
+    margin-left: 52px !important;
+    left: 0 !important;
     bottom: auto !important;
     top: auto !important;
     transform: none !important;
     text-align: left;
+    padding: 16px;
+  }
+  
+  .approach-content h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .approach-content p {
+    font-size: 14px;
   }
   
   .step-top:hover .approach-content,
@@ -229,16 +248,16 @@
   }
 
   .approach-content-connector {
-    top: 38px;
-    left: -16px;
-    width: 16px;
+    top: 30px;
+    left: -4px;
+    width: 4px;
     height: 2px;
     transform: none;
   }
   
   .step-top .approach-content-connector,
   .step-bottom .approach-content-connector {
-    top: 38px;
+    top: 30px;
     bottom: auto;
   }
 }

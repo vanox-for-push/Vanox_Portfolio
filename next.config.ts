@@ -15,7 +15,8 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: [
     'robbie-thirty-hobby-here.trycloudflare.com',
     'versions-sacrifice-input-tickets.trycloudflare.com',
-    'finish-they-properly-respiratory.trycloudflare.com'
+    'finish-they-properly-respiratory.trycloudflare.com',
+    'alfred-officially-tours-rankings.trycloudflare.com'
   ],
 };
 

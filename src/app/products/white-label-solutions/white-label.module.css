@@ -31,6 +31,14 @@
   letter-spacing: 0.5px;
 }
 
+.mobileBadge {
+  display: none;
+}
+
+.mobileTitle {
+  display: none;
+}
+
 .heroTitle {
   font-size: 48px;
   line-height: 1.1;
@@ -157,13 +165,48 @@
 
 @media (max-width: 768px) {
   .heroContainer {
+    display: flex;
+    flex-direction: column;
     text-align: left;
+    gap: 32px;
+  }
+  .overviewContainer {
+    /* removed text-align: center to allow left alignment */
+  }
+  .mobileBadge {
+    display: flex;
+    order: 1;
+    margin: 0 auto;
+    width: fit-content;
+    justify-content: center;
+    margin-bottom: -16px; /* pull closer to image */
+  }
+  .desktopBadge {
+    display: none;
+  }
+  .imageWrapper {
+    order: 2;
+  }
+  .textWrapper {
+    order: 3;
+  }
+  .desktopTitle {
+    display: none;
+  }
+  .mobileTitle {
+    display: block;
   }
   .heroTitle {
     font-size: 32px;
-  }
-  .heroBtns {
     justify-content: flex-start;
+    gap: 12px;
+  }
+  .heroBtns :global(.btn) {
+    font-size: 13px;
+    padding: 10px 16px;
+    height: auto;
+    border-radius: 8px;
+    letter-spacing: 0;
   }
   .heroSection {
     padding: 80px 0 40px;
