@@ -82,9 +82,6 @@ const industriesList: IndustryItem[] = [
     title: "Startups",
     description: "Build scalable payment infrastructure that grows alongside your business.",
     image: "/images/industries/startups_v2.jpg",
-    objectPosition: "center bottom",
-    transform: "scale(1.18)",
-    transformOrigin: "center bottom",
   },
 ];
 

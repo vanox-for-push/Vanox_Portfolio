@@ -77,33 +77,33 @@ const solutions = [
     alt: "Vanox Dynamics B2B & B2C Business SaaS Platform",
     highlights: [
       {
-        title: "Credit Card & Rent Payouts",
+        title: "Credit Card & Rent",
         desc: "Instant processing for B2B vendor payouts & rent.",
         icon: CreditCard,
       },
       {
-        title: "20+ Banking APIs & AEPS",
+        title: "Banking APIs & AEPS",
         desc: "Plug-and-play APIs for BBPS utility bills, AEPS cash, and DMT payouts.",
         icon: Layers,
       },
       {
-        title: "AI Healthcare & KYC",
+        title: "AI & KYC Verification",
         desc: "Automated document verification, OCR parsing, and identity checks.",
         icon: ShieldCheck,
       },
       {
-        title: "Turnkey White-Label SaaS",
+        title: "White-Label SaaS",
         desc: "Custom branding, multi-tenant portals, and admin control panels.",
         icon: Building2,
       },
       {
-        title: "License & Registration",
+        title: "License & Compliance",
         desc: "Full assistance with regulatory compliance and legal registration.",
         icon: FileCheck2,
       },
       {
-        title: "Automated GST Invoicing",
-        desc: "Recurring payments, Payment gateway and payouts",
+        title: "Automated GST Invoices",
+        desc: "Automated GST invoicing, recurring billing, and payout reconciliation.",
         icon: CheckCircle2,
       },
     ],
@@ -122,7 +122,7 @@ const solutions = [
     alt: "Vanox Dynamics Digital Solutions and AI Engineering",
     highlights: [
       {
-        title: "Custom Web & Mobile Apps",
+        title: "Web & Mobile Apps",
         desc: "High-performance React/Next.js applications and native iOS & Android apps.",
         icon: Code2,
       },
@@ -132,7 +132,7 @@ const solutions = [
         icon: Sparkles,
       },
       {
-        title: "Enterprise Software & ERP",
+        title: "Enterprise ERP Software",
         desc: "Tailored business management portals built around your exact workflows.",
         icon: Building2,
       },
@@ -147,7 +147,7 @@ const solutions = [
         icon: Layers,
       },
       {
-        title: "Predictive AI Analytics",
+        title: "Predictive Analytics",
         desc: "Actionable business intelligence and automated financial reporting.",
         icon: BarChart3,
       },
