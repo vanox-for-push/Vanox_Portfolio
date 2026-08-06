@@ -799,14 +799,14 @@ merchant = vanox.Merchants.create(
       </section>
 
       {/* 4. Partner Ecosystem (Animated Network) */}
-      <section className="b2b-section hide-on-mobile" style={{ background: 'rgba(15, 23, 42, 0.5)', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+      {/* <section className="b2b-section hide-on-mobile" style={{ background: 'rgba(15, 23, 42, 0.5)', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="b2b-section-header" style={{ marginBottom: '0px', textAlign: 'center' }}>
           <span>Partner Ecosystem</span>
           <h2>Built for Complex Networks</h2>
         </div>
 
         <B2bNetworkAnimation />
-      </section>
+      </section> */}
 
 
 

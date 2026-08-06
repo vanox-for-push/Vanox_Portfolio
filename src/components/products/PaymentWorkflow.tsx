@@ -10,14 +10,14 @@ const workflowSteps = [
     id: "step-1",
     title: "1. Checkout & Tokenization",
     description: "User initiates payment on the merchant platform. Sensitive card or bank data is securely captured and tokenized instantly to ensure zero data leaks.",
-    image: "/illustrations/Checkout & Tokenization.png",
+    image: "/illustrations/checkout-and-tokenization.png",
     icon: ShieldCheck,
   },
   {
     id: "step-2",
     title: "2. API Verification & Fraud Check",
     description: "Our payment API receives the tokenized payload, validating the request while AI algorithms monitor in real-time for suspicious activity or anomalies.",
-    image: "/illustrations/API Verification & Fraud Check.png",
+    image: "/illustrations/api-verification-fraud-check.png",
     icon: Cpu,
   },
   {
@@ -31,14 +31,14 @@ const workflowSteps = [
     id: "step-4",
     title: "4. Bank Authorization",
     description: "The acquiring and issuing banks securely communicate via card networks to authorize the transaction, ensuring sufficient funds and valid credentials.",
-    image: "/illustrations/Bank Authorization.png",
+    image: "/illustrations/bank-authorization.png",
     icon: Landmark,
   },
   {
     id: "step-5",
     title: "5. Settlement & Reporting",
     description: "Upon approval, funds are cleared into the merchant's ledger. The dashboard updates immediately with real-time settlement reporting.",
-    image: "/illustrations/Settlement & Reporting.png",
+    image: "/illustrations/settlement-reporting.png",
     icon: CheckCircle2,
   },
 ];

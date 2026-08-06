@@ -25,37 +25,37 @@ const solutions = [
     icon: Palette,
     title: "Custom Branding",
     description: "Launch the platform with your own logo, colors, domain, and brand identity.",
-    image: "/images/digital_overview.png"
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1200&auto=format&fit=crop"
   },
   {
     icon: Users,
     title: "Merchant Management",
     description: "Manage merchant onboarding, verification, approvals, and daily operations.",
-    image: "/images/b2b_overview.png"
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
   },
   {
     icon: CreditCard,
     title: "Payment Infrastructure",
     description: "Offer secure payment collection, settlements, and payouts under your brand.",
-    image: "/images/about/Send and accept payment.jpg.jpeg"
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1200&auto=format&fit=crop"
   },
   {
     icon: Layout,
     title: "Admin Dashboard",
     description: "Monitor merchants, transactions, custom reports, and operational performance.",
-    image: "/images/b2b_hero_new.jpg"
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
   },
   {
     icon: Code2,
     title: "API Integration",
     description: "Connect websites, mobile apps, ERP systems, and external platforms seamlessly.",
-    image: "/images/about/tech.png"
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
   },
   {
     icon: LineChart,
     title: "Business Analytics",
     description: "Gain valuable insights through interactive reports and operational analytics.",
-    image: "/images/industries/finance_v2.jpg"
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80"
   },
 ];
 

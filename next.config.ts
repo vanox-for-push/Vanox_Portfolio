@@ -4,6 +4,14 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
+  },
   allowedDevOrigins: [
     'robbie-thirty-hobby-here.trycloudflare.com',
     'versions-sacrifice-input-tickets.trycloudflare.com',

@@ -28,7 +28,7 @@ const solutions = [
     title: "All-in-One Payment & Payout Infrastructure",
     description:
       "Accept money seamlessly via UPI, Cards, Net Banking & Wallets, and power 24x7 instant payouts across bank accounts with bank-grade security and automated reconciliation.",
-    image: "/images/about/Send and accept payment.jpg.jpeg",
+    image: "/images/about/send-and-accept-payment.jpeg",
     alt: "Vanox Dynamics Payment and Payout Infrastructure",
     highlights: [
       {
@@ -73,7 +73,7 @@ const solutions = [
     title: "Customizable B2B & B2C Enterprise SaaS Platform",
     description:
       "Launch turn-key fintech software, UPI portals, AEPS & BBPS management, KYC verification APIs, and e-commerce marketplaces with complete licensing and operational support.",
-    image: "/images/about/B2b_b2c.jpg.jpeg",
+    image: "/images/about/b2b-b2c.jpeg",
     alt: "Vanox Dynamics B2B & B2C Business SaaS Platform",
     highlights: [
       {

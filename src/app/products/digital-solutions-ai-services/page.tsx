@@ -106,7 +106,7 @@ const accordionIndustries = [
     name: "Manufacturing",
     description: "IoT dashboards, supply chain tracking, and predictive maintenance AI.",
     icon: <Factory />,
-    image: "/images/industries/startups.jpg"
+    image: "/images/industries/manufacturing.png"
   },
   {
     name: "Education",
