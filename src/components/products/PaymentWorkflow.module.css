@@ -1,0 +1,175 @@
+.workflowSection {
+  padding: 100px 0;
+  background-color: var(--bg-primary, #FFFFFF);
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 80px;
+}
+
+@media (max-width: 768px) {
+  .workflowSection {
+    padding: 20px 0 20px;
+  }
+  .header {
+    text-align: left;
+    margin: 0 0 30px;
+  }
+  .header h2 {
+    font-size: 20px; /* Reduced to h6-like size */
+    line-height: 1.3;
+  }
+}
+
+.header h2 {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text-heading, #0f172a);
+  margin-bottom: 16px;
+}
+
+.header p {
+  font-size: 18px;
+  color: var(--text-muted, #64748b);
+  line-height: 1.6;
+}
+
+.pipeline {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .pipeline {
+    gap: 0px; /* Remove gap so arrows connect the steps */
+  }
+}
+
+.stepGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.stepRow {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .stepRow {
+    flex-direction: row;
+    gap: 80px;
+  }
+  .rowNormal {
+    flex-direction: row;
+  }
+  .rowReverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.imageCol, .textCol {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .imageCol, .textCol {
+    width: 50%;
+  }
+}
+
+.imageBox {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--bg-secondary, #F8FAFC);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.imageBox img {
+  border-radius: 24px;
+}
+
+.textCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.stepIcon {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.textCol h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-heading, #0f172a);
+  line-height: 1.3;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .textCol h3 {
+    font-size: 20px;
+  }
+}
+
+.textCol p {
+  font-size: 16px;
+  color: var(--text-muted, #64748b);
+  line-height: 1.6;
+}
+
+/* Arrow Container */
+.arrowContainer {
+  display: block;
+  width: 100%;
+  height: 60px; /* Shorter for mobile */
+  margin: 10px 0;
+}
+
+.desktopArrow {
+  display: none;
+}
+
+.mobileArrow {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .arrowContainer {
+    height: 120px;
+    margin: -20px 0; /* pulls rows slightly closer together */
+    z-index: 0;
+  }
+  .desktopArrow {
+    display: block;
+  }
+  .mobileArrow {
+    display: none;
+  }
+}

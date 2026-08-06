@@ -1,0 +1,243 @@
+/* RotaryTimeline.css */
+
+/* =========================================================================
+   BASE STYLES (MOBILE-FIRST)
+   ========================================================================= */
+
+.rotary-container {
+  position: relative;
+  width: 100%;
+}
+
+.rotary-sticky-wrapper {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row; /* Force side-by-side even on mobile */
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  background-color: #f8fafc; /* slate-50 */
+}
+
+/* --- Left Side: Dial --- */
+.rotary-dial-section {
+  position: relative;
+  width: 40%; /* Mobile width 40% */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rotary-dial-scaler {
+  position: absolute;
+  top: 50%;
+  left: -220px; /* Pushed very far left to handle the huge radius */
+  transform: translateY(-50%) scale(0.8); /* Incredibly massive dial */
+}
+
+.rotary-dial-circle {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  left: 0;
+  top: 50%;
+  margin-left: -400px; /* centers the 800px circle exactly on left: 0 */
+  margin-top: -400px; /* centers the 800px circle exactly on top: 50% */
+  border-radius: 50%;
+  border: 1px solid #e2e8f0; /* slate-200 */
+}
+
+.rotary-dial-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  /* background-color: #ffffff; */
+  padding: 0 0.3rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  /* border: 1px solid #f1f5f9; slate-100 */
+  transition: all 0.3s ease;
+}
+
+.rotary-dial-number.active {
+  color: #9333ea; /* purple-600 */
+  font-size: 1.875rem; /* text-3xl */
+}
+
+.rotary-dial-number.inactive {
+  color: #94a3b8; /* slate-400 */
+  font-size: 1.25rem; /* text-xl */
+}
+
+/* --- Right Side: Content --- */
+.rotary-content-section {
+  position: relative;
+  width: 60%; /* Mobile width 60% */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.25rem; /* very minimal container padding */
+  z-index: 20;
+}
+
+.rotary-header-label {
+  color: #9333ea; /* purple-600 */
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.875rem; /* text-sm */
+}
+
+.rotary-header-title {
+  font-size: 1.5rem; /* text-2xl for mobile */
+  font-weight: 900;
+  color: #0f172a; /* slate-900 */
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem; /* mobile spacing */
+}
+
+/* The container that holds the cross-fading cards. */
+.rotary-card-wrapper {
+  position: relative;
+  width: 100%;
+  height: 520px; /* Needs to be very tall on mobile because tight width squishes text */
+}
+
+.rotary-card {
+  position: absolute;
+  inset: 0;
+  background-color: #ffffff;
+  padding: 0.75rem; /* extremely tight padding to save horizontal space */
+  border-radius: 1rem; /* rounded-2xl */
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(226, 232, 240, 0.5);
+}
+
+.rotary-card-content {
+  height: 100%;
+}
+
+.rotary-card-watermark {
+  color: #9333ea;
+  font-size: 5rem;
+  font-weight: 900;
+  opacity: 0.08;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  pointer-events: none;
+}
+
+.rotary-card-title {
+  font-size: 1.125rem; /* text-lg on mobile */
+  font-weight: 700;
+  color: #1e293b; /* slate-800 */
+  margin-bottom: 0.5rem;
+}
+
+.rotary-card-description {
+  font-size: 0.875rem; /* text-sm on mobile */
+  color: #475569; /* slate-600 */
+  max-width: 32rem; /* max-w-lg */
+}
+
+.rotary-card ul li {
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.3;
+}
+
+.rotary-card .rotary-card-content ul li span {
+  margin-left: 1rem;
+}
+
+@media (max-width: 899px) {
+.rotary-card ul li span{
+    font-size:0.8rem;
+}
+.rotary-card-description{
+  font-size:0.8rem;
+}
+}
+@media (max-width: 768px){
+.rotary-sticky-wrapper {
+  position: sticky;
+  top: 80px;
+  height: 440px;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
+  margin: 0 auto;
+}
+.rotary-card {
+  position: absolute;
+  background-color: #ffffff00;
+  border:none;
+  box-shadow:none;
+}
+.rotary-card-watermark{
+  display:none;
+}
+.rotary-card-wrapper{
+  height: 250px;
+}
+.rotary-card ul li {
+    margin-top:3%;
+}
+.rotary-card-title{
+  font-size:1.25rem;
+}
+}
+
+/* =========================================================================
+   DESKTOP MEDIA QUERIES
+   ========================================================================= */
+
+@media (min-width: 768px) {
+
+  .rotary-dial-section {
+    width: 50%;
+  }
+
+  .rotary-dial-scaler {
+    left: 0;
+    transform: translateY(-50%) scale(1.35); /* Increased dial size on desktop */
+  }
+
+  .rotary-content-section {
+    width: 50%;
+    padding: 2rem 4rem;
+  }
+
+  .rotary-header-title {
+    font-size: 3rem; /* text-5xl */
+    margin-bottom: 1rem;
+  }
+
+  .rotary-card-wrapper {
+    height: 350px;
+  }
+
+  .rotary-card {
+    padding: 3rem; /* spacious desktop padding */
+  }
+
+  .rotary-card-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+/* 
+  .rotary-card-description {
+    font-size: 1.125rem; 
+  } */
+
+  .rotary-card ul li {
+    font-size: 1rem; /* default */
+    line-height: 1.5;
+  }
+}

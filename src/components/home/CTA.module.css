@@ -1,0 +1,140 @@
+.section {
+  background-color: #0f172a;
+}
+
+.banner {
+  background: #0f172a;
+  padding: 100px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Decorative orbs */
+.banner::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  left: -10%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.inner h2 {
+  font-size: 40px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+  font-weight: 800;
+}
+
+.inner p {
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+.btnWhite {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: #10b981;
+  color: #FFFFFF;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btnWhite:hover {
+  transform: translateY(-2px);
+  background: #047857;
+}
+
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 28px;
+  background: transparent;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btnGhost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner {
+    padding: 40px 16px;
+  }
+  .inner h2 {
+    font-size: 28px;
+  }
+  .inner p {
+    font-size: 15px;
+  }
+  .buttons {
+    flex-direction: row;
+    width: 100%;
+    gap: 8px;
+  }
+  .btnWhite, .btnGhost {
+    flex: 1;
+    justify-content: center;
+    width: auto;
+    padding: 10px 8px;
+    font-size: 13px;
+    white-space: nowrap;
+    text-align: center;
+  }
+}

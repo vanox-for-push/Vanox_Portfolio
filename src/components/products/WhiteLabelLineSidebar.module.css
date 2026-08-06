@@ -1,0 +1,76 @@
+.container {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 40px 0;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.sidebarSection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.contentSection {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activeContentCard {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .activeContentCard {
+    padding: 32px;
+  }
+}
+
+.contentIconWrapper {
+  color: var(--color-primary, #10b981);
+  margin-bottom: 24px;
+  display: inline-flex;
+}
+
+.contentTitle {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-heading, #111827);
+  font-family: var(--font-sora), sans-serif;
+}
+
+.contentDesc {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-muted, #6b7280);
+}
+
+.decorativeGlow {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 250px;
+  height: 250px;
+  background: var(--color-primary, #10b981);
+  filter: blur(100px);
+  opacity: 0.15;
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+}

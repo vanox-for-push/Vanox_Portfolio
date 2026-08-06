@@ -1,0 +1,140 @@
+.stairsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 40px 0;
+}
+
+@media (max-width: 768px) {
+  .stairsContainer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.stairsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stairItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+  color: var(--text-body, #4b5563);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+}
+
+.stairItem:hover {
+  transform: translateX(4px);
+  border-color: var(--color-primary, #10b981);
+}
+
+.activeStair {
+  background: var(--color-primary, #10b981);
+  color: #FFFFFF;
+  border-color: var(--color-primary, #10b981);
+  box-shadow: 0 10px 15px -3px rgba(22, 163, 74, 0.2);
+}
+
+.activeStair:hover {
+  transform: none; /* Let framer motion or static styles handle active hover */
+}
+
+.stairIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stairTitle {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-sora), sans-serif;
+}
+
+.contentDisplay {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .contentDisplay {
+    min-height: 300px;
+    padding-left: 0;
+  }
+}
+
+.activeContentCard {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 24px;
+  padding: 48px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .activeContentCard {
+    padding: 32px;
+  }
+}
+
+.contentIconWrapper {
+  color: var(--color-primary, #10b981);
+  margin-bottom: 24px;
+  display: inline-flex;
+  padding: 16px;
+  background: var(--color-primary-light, #dcfce7);
+  border-radius: 16px;
+}
+
+.contentTitle {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-heading, #111827);
+}
+
+.contentDesc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-muted, #6b7280);
+}
+
+.decorativeGlow {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 250px;
+  height: 250px;
+  background: var(--color-primary, #10b981);
+  filter: blur(100px);
+  opacity: 0.15;
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Mobile Adjustments for stairs margin */
+@media (max-width: 768px) {
+  .stairItem {
+    --stair-indent: 0px !important;
+  }
+}

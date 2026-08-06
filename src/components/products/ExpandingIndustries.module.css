@@ -1,0 +1,238 @@
+.section {
+  padding: 100px 0;
+  background-color: var(--bg-primary, #FFFFFF);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 10px 0 40px;
+  }
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin: 0 0 30px;
+    text-align: left;
+  }
+}
+
+.header span {
+  display: inline-block;
+  color: var(--color-primary, #10b981);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.header h2 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #10b981;
+  margin-bottom: 16px;
+}
+
+.header p {
+  font-size: 18px;
+  color: var(--text-muted, #64748b);
+  line-height: 1.6;
+}
+
+/* Desktop Expanding Layout */
+.expandingContainer {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .expandingContainer {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    height: 480px;
+  }
+}
+
+.card {
+  position: relative;
+  flex: 1;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: flex 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  background-color: var(--bg-secondary, #F8FAFC);
+}
+
+.card.active {
+  flex: 5;
+}
+
+.imageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0) 100%);
+  pointer-events: none;
+}
+
+/* Default state: Icon centered at bottom */
+.defaultIcon {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+}
+
+.defaultIcon.hidden {
+  opacity: 0;
+  transform: translateX(-50%) translateY(20px);
+}
+
+/* Active state content */
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 32px;
+  color: #FFFFFF;
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s; /* Wait slightly for flex expansion */
+  pointer-events: auto;
+}
+
+.contentHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.activeIcon {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+.contentHeader h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  white-space: nowrap;
+  color: #FFFFFF;
+}
+
+.content p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  /* Prevent text wrapping weirdly while animating width */
+  min-width: 300px;
+}
+
+/* Mobile Fallback Grid / Carousel */
+.mobileGrid {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 24px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.mobileGrid::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .mobileGrid {
+    display: none;
+  }
+}
+
+.mobileCard {
+  background: var(--bg-secondary, #F8FAFC);
+  border-radius: 16px;
+  overflow: hidden;
+  flex: 0 0 85%;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .mobileGrid {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+  .mobileCard {
+    flex: 1 1 calc(50% - 16px);
+  }
+}
+
+.mobileImageContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.mobileCardContent {
+  padding: 24px;
+}
+
+.mobileCardContent h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-heading, #0f172a);
+}
+
+.mobileCardContent p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted, #64748b);
+  margin: 0;
+}

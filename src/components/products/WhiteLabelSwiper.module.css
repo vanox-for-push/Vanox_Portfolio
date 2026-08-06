@@ -1,0 +1,115 @@
+.swiperSection {
+  width: 100%;
+  position: relative;
+  /* Allow swiper to bleed out of container on mobile if needed, or keep padding */
+  padding: 20px 0 40px 0;
+}
+
+@media (max-width: 768px) {
+  .swiperSection {
+    padding: 10px 0 16px 0;
+  }
+}
+
+.swiperContainer {
+  width: 100%;
+  padding: 20px; /* Add padding to prevent shadow clipping */
+  margin: -20px; /* Offset the padding so it visually aligns */
+  overflow: hidden;
+}
+
+.slide {
+  height: 320px;
+  display: flex;
+}
+
+.blendedCard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.cardImageBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
+  z-index: 2;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 3;
+  padding: 32px 24px;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #FFFFFF;
+  font-family: var(--font-sora), sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cardDesc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  
+  /* Enforce exactly 2 lines for visual uniformity */
+  height: 48px; /* 15px * 1.6 line-height * 2 lines = 48px */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Custom Pagination styling */
+.customPagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .customPagination {
+    margin-top: 16px;
+  }
+}
+
+.swiperBullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border-color, #e2e8f0);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.swiperBulletActive {
+  width: 24px;
+  border-radius: 4px;
+  background: var(--color-primary, #10b981);
+}

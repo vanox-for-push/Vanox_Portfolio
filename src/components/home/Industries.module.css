@@ -1,0 +1,373 @@
+.section {
+  padding: 80px 0;
+  background-color: #F8FAFC;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #16A34A;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.header h2 {
+  font-size: 38px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.headerDesc {
+  font-size: 17px;
+  color: #6B7280;
+  line-height: 1.6;
+}
+
+/* Tabs Bar */
+.tabsContainer {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #F1F5F9;
+  margin-bottom: 32px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #64748B;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  margin-bottom: -2px; /* Overlap container border */
+}
+
+.tab:hover {
+  color: #16A34A;
+}
+
+.activeTab {
+  color: #16A34A;
+  border-bottom: 3px solid #16A34A;
+  background: linear-gradient(to top, rgba(22, 163, 74, 0.08) 0%, transparent 100%);
+  border-radius: 8px 8px 0 0;
+}
+
+/* Tab Content Layout */
+.contentArea {
+  display: grid;
+  grid-template-columns: 40% 12% 48%;
+  align-items: center;
+  position: relative;
+  max-width: 100%;
+}
+
+/* Visual Panel (Left side) */
+.visualPanel {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(22, 163, 74, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: floatGlow 6s ease-in-out infinite alternate;
+}
+
+.showcaseCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  color: #111827;
+}
+
+.showcaseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 16px;
+}
+
+.showcaseDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #EF4444;
+  box-shadow: 0 0 10px #EF4444, 20px 0 0 #F59E0B, 40px 0 0 #10B981;
+}
+
+.showcaseItem {
+  height: 14px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  margin: 0 24px 12px 24px;
+}
+
+.showcaseItemActive {
+  background: linear-gradient(90deg, #10B981, #3B82F6);
+  width: 85%;
+}
+
+.showcaseItemMedium {
+  width: 60%;
+}
+
+.showcaseItemShort {
+  width: 40%;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.industryImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.showcaseCard:hover .industryImage {
+  transform: scale(1.05);
+}
+
+.imageLabel {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 26px;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  z-index: 10;
+}
+
+/* Detail Panel (Right side) */
+.detailPanel {
+  grid-column: 2 / 4;
+  grid-row: 1;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.industryHeading {
+  font-size: 32px;
+  line-height: 1.25;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.highlightText {
+  color: #16A34A;
+}
+
+.industryDesc {
+  font-size: 16px;
+  color: #4B5563;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.subSectionTitle {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #9CA3AF;
+  margin-bottom: 20px;
+}
+
+.solutionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.solCard {
+  background: #F8FAFC;
+  border: 1px solid #F1F5F9;
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.solCard:hover {
+  background: #FFFFFF;
+  border-color: #16A34A;
+  box-shadow: 0 12px 24px rgba(22, 163, 74, 0.06);
+}
+
+.solIconBox {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(22, 163, 74, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #16A34A;
+}
+
+.solCardText {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.solCard h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.solCard p {
+  font-size: 14px;
+  color: #6B7280;
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.exploreLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #16A34A;
+  cursor: pointer;
+  transition: gap 0.3s ease;
+}
+
+.solCard:hover .exploreLink {
+  gap: 8px;
+}
+
+@keyframes floatGlow {
+  0% { transform: translateY(-10px) scale(0.9); }
+  100% { transform: translateY(10px) scale(1.1); }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contentArea {
+    grid-template-columns: 1fr;
+  }
+  .visualPanel {
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 350px;
+  }
+  .detailPanel {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: -80px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 0;
+  }
+  .tabsContainer {
+    justify-content: flex-start;
+  }
+  .header h2 {
+    font-size: 30px;
+  }
+  .detailPanel {
+    padding: 32px 24px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .solutionsGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .solCard {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 14px;
+  }
+  .solIconBox {
+    margin-bottom: 0;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+  .solCardText {
+    display: flex;
+    flex-direction: column;
+  }
+  .solCard h4 {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  .solCard p {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+}

@@ -1,0 +1,344 @@
+.section {
+  padding: 60px 0;
+  background-color: #F8FAFC;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Split Layout */
+.splitLayout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Left Column: Trust Narrative */
+.trustColumn {
+  position: relative;
+}
+
+.stickyContent {
+  position: sticky;
+  top: 120px;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #16A34A;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.trustColumn h2 {
+  font-size: 38px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: #111827;
+  font-family: var(--font-sora);
+  letter-spacing: -0.02em;
+}
+
+.headerDesc {
+  font-size: 15px;
+  color: #4B5563;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* Metrics Grid */
+.metricsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 380px;
+}
+
+.metricCard {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.metricCard:hover {
+  transform: translateX(8px);
+  border-color: #A3E635;
+}
+
+.metricIconBox {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #F0FDF4;
+  color: #16A34A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.metricData {
+  display: flex;
+  flex-direction: column;
+}
+
+.metricValue {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.metricLabel {
+  font-size: 13px;
+  color: #6B7280;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* Right Column: Features Grid */
+.featuresColumn {
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: linear-gradient(145deg, #FFFFFF, #FAFAFA);
+  border-radius: 16px;
+  padding: 20px 24px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.9), transparent);
+  transform: skewX(-20deg);
+  transition: none;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card:hover::after {
+  left: 200%;
+  transition: all 0.7s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  border-color: rgba(22, 163, 74, 0.2);
+}
+
+.card:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.iconBox {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #F0FDF4;
+  color: #16A34A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .iconBox {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.card p {
+  font-size: 14px;
+  color: #4B5563;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .splitLayout {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .stickyContent {
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .trustColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .headerText {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .metricsGrid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+    margin: 24px auto 0 auto;
+  }
+  .metricCard {
+    flex: 1;
+    min-width: 200px;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 30px 0 30px;
+  }
+  .headerText {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .trustColumn h2 {
+    font-size: 32px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 16px;
+    gap: 16px;
+  }
+  .iconBox {
+    margin-bottom: 0;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+  .cardText {
+    display: flex;
+    flex-direction: column;
+  }
+  .card h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .card p {
+    font-size: 14px;
+  }
+  .metricsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 100%;
+    width: 100%;
+    margin: 24px auto 0 auto;
+    justify-content: center;
+  }
+  .metricCard {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 8px;
+    gap: 8px;
+    text-align: center;
+    min-width: 0;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .metricCard:hover {
+    transform: translateY(-2px);
+  }
+  .metricIconBox {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto;
+  }
+  .metricData {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .metricValue {
+    font-size: 16px;
+    text-align: center;
+    display: block;
+  }
+  .metricLabel {
+    font-size: 11px;
+    line-height: 1.2;
+    margin-top: 4px;
+    text-align: center;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .trustColumn h2 {
+    font-size: 26px;
+  }
+  .metricsGrid {
+    gap: 8px;
+  }
+  .metricCard {
+    padding: 12px 4px;
+    gap: 6px;
+  }
+  .metricValue {
+    font-size: 14px;
+  }
+  .metricLabel {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,215 @@
+/* Terms & Conditions Mobile Responsive CSS */
+.terms-hero {
+  position: relative;
+  padding: 140px 24px 60px;
+  overflow: hidden;
+  background-color: #0F172A;
+  color: #FFFFFF;
+}
+
+.terms-hero-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.terms-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #4ADE80;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.terms-hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.terms-hero-description {
+  font-size: 18px;
+  max-width: 700px;
+  color: #94A3B8;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Glance Grid */
+.terms-glance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.terms-glance-card {
+  padding: 20px;
+  background-color: var(--bg-primary);
+  border-radius: 18px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.terms-glance-icon {
+  color: var(--color-primary);
+  margin-bottom: 12px;
+  display: inline-flex;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .terms-content-wrapper {
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .terms-hero {
+    padding: 90px 16px 36px;
+  }
+
+  .terms-hero-container {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .terms-hero h1 {
+    font-size: 28px;
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .terms-hero-description {
+    font-size: 15px;
+    max-width: 100%;
+    margin-bottom: 16px;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .terms-glance-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .terms-glance-card {
+    padding: 14px 12px !important;
+    border-radius: 14px !important;
+  }
+
+  .terms-glance-card h3 {
+    font-size: 15px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .terms-glance-card p {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+
+  .terms-main-section {
+    padding: 24px 16px 12px !important;
+  }
+
+  .terms-cards-container {
+    gap: 12px !important;
+  }
+
+  .terms-card {
+    padding: 16px 14px !important;
+    border-radius: 14px !important;
+  }
+
+  .terms-card-header {
+    gap: 8px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .terms-card-icon {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    border-radius: 8px !important;
+  }
+
+  .terms-card-icon svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  .terms-card-title {
+    font-size: 17px !important;
+    line-height: 1.2 !important;
+  }
+
+  .terms-card p {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* Terms Cards Styling */
+.terms-card {
+  scroll-margin-top: 100px;
+  background-color: var(--bg-primary);
+  border-radius: 20px;
+  padding: 28px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.terms-card.active {
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 30px rgba(22, 163, 74, 0.08);
+}
+
+.terms-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.terms-card-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 10px;
+  background-color: var(--bg-secondary);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.terms-card.active .terms-card-icon {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.terms-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0;
+  line-height: 1.25;
+}

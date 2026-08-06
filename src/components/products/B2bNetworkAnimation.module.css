@@ -1,0 +1,159 @@
+.networkWrapper {
+  width: 100%;
+  padding: 60px 0;
+  display: block; /* Changed from flex to allow horizontal scrolling without clipping */
+  text-align: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom scrollbar for horizontal scrolling */
+.networkWrapper::-webkit-scrollbar {
+  height: 6px;
+}
+.networkWrapper::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+.networkWrapper::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.3); /* Match theme green */
+  border-radius: 3px;
+}
+.networkWrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.5);
+}
+
+.networkContainer {
+  position: relative;
+  display: inline-block; /* Allows centering via text-align */
+  width: 100%;
+  min-width: 800px; /* Ensure nodes don't overlap on mobile */
+  max-width: 1000px;
+  height: 500px; /* Fixed height for the mesh canvas */
+  text-align: left; /* Reset text alignment for inner nodes */
+}
+
+/* --- SVG Canvas & Lines --- */
+.connectionsCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.linePath {
+  stroke: rgba(16, 185, 129, 0.2); /* Faint green lines */
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 6 6;
+  animation: march 20s linear infinite;
+}
+
+@keyframes march {
+  to { stroke-dashoffset: -1000; }
+}
+
+/* The Data Packets */
+.dataPacket {
+  fill: #4ADE80; /* Bright green dots */
+  filter: drop-shadow(0 0 8px #4ADE80);
+}
+
+.delay1 { animation-delay: 0s; }
+.delay2 { animation-delay: 0.8s; }
+.delay3 { animation-delay: 1.5s; }
+.delay4 { animation-delay: 2.2s; }
+
+/* --- Nodes --- */
+.node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.iconBox {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9CA3AF;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.node:hover .iconBox {
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.nodeLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #E2E8F0;
+  white-space: nowrap;
+  background: rgba(11, 15, 25, 0.6);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Core Node (Center) --- */
+.coreNode {
+  z-index: 3;
+}
+
+.coreIconBox {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  border: 1px solid #34D399;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.coreLabel {
+  font-size: 16px;
+  font-weight: 700;
+  color: #4ADE80;
+  white-space: nowrap;
+  margin-top: 8px;
+}
+
+/* Pulsing rings around the core */
+.corePulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background: rgba(16, 185, 129, 0.2);
+  border-radius: 50%;
+  z-index: 1;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+}
