@@ -253,7 +253,8 @@ export default function DigitalSolutionsPage() {
               Digital Innovation
             </span>
             
-            <h1>Engineering Your Digital Future</h1>
+            <h1 className="desktop-h1">Engineering Your Digital Future</h1>
+            <h2 className="mobile-h2">Engineering Your Digital Future</h2>
             
             <p className="ds-hero-description">
               We craft high-performance web platforms, powerful mobile apps, and custom enterprise software designed to scale operations and accelerate your business growth.
@@ -302,7 +303,7 @@ export default function DigitalSolutionsPage() {
 
 
       {/* 3. Our Digital Services */}
-      <section className="ds-section bg-slate-50 relative" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+      <section className="ds-section bg-slate-50 relative no-top-gap-mobile" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         <div className="w-full relative z-10 py-20 px-10 sm:px-16 md:px-24 max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
             
@@ -371,7 +372,7 @@ export default function DigitalSolutionsPage() {
       </section>
 
       {/* 4. AI Solutions */}
-      <section className="ds-section" style={{ background: '#FFFFFF' }}>
+      <section className="ds-section ds-ai-solutions-section" style={{ background: '#FFFFFF' }}>
         <div className="container">
           <div className="ds-section-header">
             <span>Intelligence Layer</span>
@@ -401,7 +402,7 @@ export default function DigitalSolutionsPage() {
       <RotaryTimeline steps={process} />
 
       {/* 6. Why Vanox */}
-      <section className="ds-section" style={{ background: '#FFFFFF' }}>
+      <section className="ds-section ds-why-vanox-section" style={{ background: '#FFFFFF' }}>
         <div className="container">
           <div className="ds-section-header">
             <span>The Advantage</span>

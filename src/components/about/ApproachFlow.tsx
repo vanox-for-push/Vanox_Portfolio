@@ -60,7 +60,7 @@ const ApproachFlow = ({ steps }: { steps: any[] }) => {
                   className="approach-dot"
                   initial={{ scale: 0, rotate: -90 }}
                   whileInView={{ scale: 1, rotate: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
+                  viewport={{ once: true, margin: "0px" }}
                   transition={{ type: "spring", stiffness: 200, delay: index * 0.2 + 0.2 }}
                 >
                   <div className="approach-dot-inner">{step.step}</div>

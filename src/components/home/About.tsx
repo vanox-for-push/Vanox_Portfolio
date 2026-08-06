@@ -1,33 +1,30 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, Target, Eye } from "lucide-react";
+import { Fingerprint, Rocket, Telescope } from "lucide-react";
 import styles from "./About.module.css";
 
 const bentoItems = [
   {
     id: "who-we-are",
-    icon: Users,
+    icon: Fingerprint,
     title: "Who We Are",
     description:
       "We are architects of the digital economy. Vanox Dynamics fuses cutting-edge technology with deep industry expertise to engineer scalable, high-performance platforms for startups, global enterprises, and financial institutions.",
-    className: styles.bentoWide,
   },
   {
     id: "mission",
-    icon: Target,
+    icon: Rocket,
     title: "Our Mission",
     description:
       "To eliminate operational complexity. We deliver secure payment infrastructures and intelligent automation that empower businesses to move faster and scale without friction.",
-    className: styles.bentoSquare1,
   },
   {
     id: "vision",
-    icon: Eye,
+    icon: Telescope,
     title: "Our Vision",
     description:
       "To be the definitive technology partner for the next generation of digital enterprise—shaping a future where innovation and operational excellence are accessible to all.",
-    className: styles.bentoSquare2,
   },
 ];
 
@@ -55,24 +52,20 @@ export default function About() {
           {bentoItems.map((item, i) => (
             <motion.div
               key={item.id}
-              className={`${styles.bentoCard} ${item.className}`}
+              className={styles.bentoCard}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
             >
-              <div className={styles.bentoBg}></div>
-              
               <div className={styles.bentoContent}>
-                <div className={styles.iconBox}>
-                  <item.icon size={26} />
+                <div className={styles.titleRow}>
+                  <div className={styles.iconBox}>
+                    <item.icon size={26} />
+                  </div>
+                  <h3>{item.title}</h3>
                 </div>
-                <h3>{item.title}</h3>
                 <p>{item.description}</p>
-              </div>
-
-              <div className={styles.watermarkIcon}>
-                <item.icon size={180} />
               </div>
             </motion.div>
           ))}

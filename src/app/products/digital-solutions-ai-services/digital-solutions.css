@@ -86,7 +86,9 @@
   margin-bottom: 24px;
 }
 
-.ds-hero h1 {
+.ds-hero h1,
+.ds-hero .desktop-h1 {
+  display: block;
   font-size: 64px;
   line-height: 1.1;
   font-weight: 800;
@@ -94,6 +96,10 @@
   background: linear-gradient(135deg, #0F172A 0%, #475569 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.ds-hero .mobile-h2 {
+  display: none;
 }
 
 .ds-hero-description {
@@ -133,11 +139,14 @@
   background: linear-gradient(90deg, #A855F7, #F97316);
 }
 
-/* --- Base Section --- */
 .ds-section {
   padding: 60px 0;
   position: relative;
   z-index: 2;
+}
+
+.ds-ai-solutions-section {
+  padding: 80px 0;
 }
 
 .ds-section-header {
@@ -185,8 +194,11 @@
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 16px;
+  align-items: center;
 }
 
 .ds-glass-card::before {
@@ -219,19 +231,32 @@
   align-items: center;
   justify-content: center;
   color: #A855F7;
-  margin-bottom: 24px;
+  
+  /* Grid placement */
+  grid-column: 1;
+  grid-row: 1;
+  margin-bottom: 0 !important;
 }
 
 .ds-glass-card h3 {
   font-size: 20px;
-  margin-bottom: 12px;
   font-weight: 700;
+  
+  /* Grid placement */
+  grid-column: 2;
+  grid-row: 1;
+  margin-bottom: 0 !important;
 }
 
 .ds-glass-card p {
   color: #475569;
   font-size: 15px;
   line-height: 1.6;
+  
+  /* Grid placement */
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  margin-top: 20px;
 }
 
 /* --- Animated Horizontal Timeline --- */
@@ -406,6 +431,21 @@
   .ds-hero h1 {
     font-size: 44px;
   }
+  
+  .ds-hero .desktop-h1 {
+    display: none;
+  }
+  
+  .ds-hero .mobile-h2 {
+    display: block;
+    font-size: 44px;
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #0F172A 0%, #475569 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
   .ds-hero-description {
     margin: 0 auto 40px auto;
@@ -421,12 +461,71 @@
     grid-template-columns: 1fr;
   }
   
-  .ds-hero h1 {
+  .ds-hero h1,
+  .ds-hero .mobile-h2 {
     font-size: 36px;
   }
   
+  .ds-hero-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    max-width: 100%;
+  }
+  
   .ds-section {
-    padding: 60px 0;
+    padding: 0;
+  }
+  
+  .no-top-gap-mobile {
+    padding-top: 0 !important;
+  }
+
+  /* ds-glass-card minimal mobile layout */
+  .ds-glass-card {
+    display: grid !important;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 12px;
+    align-items: center;
+    padding: 16px !important;
+  }
+  
+  .ds-icon-wrapper {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 0 !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 8px !important;
+  }
+  
+  .ds-icon-wrapper svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  
+  .ds-glass-card h3 {
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: 0 !important;
+    font-size: 15px !important;
+  }
+  
+  .ds-glass-card p {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    margin-top: 8px !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+  }
+  
+  .ds-why-vanox-section {
+    padding: 64px 0 !important;
+  }
+  
+  .ds-ai-solutions-section {
+    padding: 64px 0 !important;
   }
 }
 

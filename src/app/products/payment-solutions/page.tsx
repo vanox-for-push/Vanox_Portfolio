@@ -349,9 +349,8 @@ export default function PaymentSolutions() {
             transition={{ duration: 0.6 }}
           >
             <span className="hero-badge">FinTech Solutions</span>
-            
-            <h1>Secure, Fast & Scalable Payment Solutions for Modern Businesses</h1>
-            
+            <h1 className="desktop-h1">Secure, Fast & Scalable Payment Solutions for Modern Businesses</h1>
+            <h2 className="mobile-h2">Secure, Fast & Scalable Payment Solutions for Modern Businesses</h2>
             <p className="hero-description">
               Vanox Dynamics provides secure payment infrastructure that enables businesses to accept payments, automate settlements, simplify financial operations, and deliver seamless payment experiences across online and offline channels.
             </p>

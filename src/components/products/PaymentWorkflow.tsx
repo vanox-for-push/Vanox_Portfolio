@@ -107,7 +107,8 @@ export default function PaymentWorkflow() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2>Complete Payment Infrastructure <span style={{ whiteSpace: "nowrap" }}>Under One Platform</span></h2>
+          <h2 className={styles.desktopTitle}>Complete Payment Infrastructure <span style={{ whiteSpace: "nowrap" }}>Under One Platform</span></h2>
+          <h3 className={styles.mobileTitle}>Complete Payment Infrastructure <span>Under One Platform</span></h3>
           <p>Watch how our APIs securely process a transaction from checkout to settlement in milliseconds.</p>
         </motion.div>
 
