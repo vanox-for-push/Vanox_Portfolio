@@ -183,7 +183,8 @@ export default function WhiteLabelSolutionsPage() {
               variants={fadeUp}
             >
               <span className={`${styles.sectionLabel} ${styles.desktopBadge}`}>Platform Overview</span>
-              <h2 className={styles.sectionTitle}>Everything You Need to Build Your FinTech Brand</h2>
+              <h1 className={`${styles.sectionTitle} ${styles.desktopTitle}`}>Everything You Need to Build Your FinTech Brand</h1>
+              <h3 className={`${styles.sectionTitle} ${styles.mobileTitle}`}>Everything You Need to Build Your FinTech Brand</h3>
               <p className={styles.sectionDesc}>
                 Vanox White Label Solutions provide a ready-to-launch platform that can be customized with your branding, business workflows, and operational requirements. From payment acceptance to merchant management and reporting, we provide the technology while you focus on growing your business.
               </p>

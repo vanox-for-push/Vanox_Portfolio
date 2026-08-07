@@ -20,6 +20,21 @@
   }
 }
 
+/* Explicit Grid Placement for Desktop Overview */
+@media (min-width: 993px) {
+  .overviewContainer .textWrapper {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .overviewContainer .imageWrapper {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .overviewContainer .mobileBadge {
+    display: none !important;
+  }
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
